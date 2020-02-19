@@ -13,6 +13,34 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-firesource',
+      options: {
+        credential: require("./firebase.json"),
+        types: [
+          {
+            type: 'Design',
+            collection: 'design',
+            map: doc => ({
+              date: doc.date,
+              image: doc.image,
+              summary: doc.summary,
+              title: doc.title,
+            }),
+          },
+          {
+            type: 'Code',
+            collection: 'code',
+            map: doc => ({
+              image: doc.image,
+              link: doc.link,
+              summary: doc.summary,
+              title: doc.title,
+            }),
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
