@@ -1,6 +1,8 @@
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 
+import "./header.scss"
+
 function Header({ menuLinks }) {
   const [isActive, setIsActive] = useState("code");
 
@@ -10,14 +12,13 @@ function Header({ menuLinks }) {
 
   return (
     <header className="header">
-      <nav role="navigation">
+      <nav role="navigation" className="header__nav">
           {menuLinks.map(link => (
             <span
               key={link.name}
-              className="header__nav"
             >
               <button
-                className={`header__item ${isActive === link.name ? "header__item--active" : ''}`}
+                className={`header__toggle ${isActive === link.name ? "header__toggle--active" : ''}`}
                 onClick={() =>toggleActive(`${link.name}`)}
               >
                 {link.name}

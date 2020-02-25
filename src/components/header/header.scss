@@ -1,0 +1,10 @@
+.header {
+    &__nav {
+        display: flex;
+        justify-content: center;
+    }
+    &__toggle {
+        background-color: transparent;
+        border: none;
+    }
+}
