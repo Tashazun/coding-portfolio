@@ -5,7 +5,7 @@ import Layout from "../components/layout/layout"
 
 const IndexPage = (props) => {
   return (
-  <Layout location={props.location}>
+  <Layout>
     {props.data.allCode.edges.map(edge => (
       <div key={edge.node.id}>
         <h2>{edge.node.title}</h2>

@@ -13,7 +13,6 @@ const Layout = ({ children, location }) => {
           title
           menuLinks {
             name
-            link
           }
         }
       }
@@ -24,7 +23,6 @@ const Layout = ({ children, location }) => {
     <>
       <Header 
         menuLinks={data.site.siteMetadata.menuLinks}
-        location={location.pathname}
       />
       <div>
         <main>{children}</main>

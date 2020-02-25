@@ -1,31 +1,42 @@
 import PropTypes from "prop-types"
-import React from "react"
-import { Link } from "gatsby"
+import React, { useState } from "react"
 
-const Header = ({ menuLinks, location }) => (
-  <header>
-    <nav role="navigation">
-        {menuLinks.map(link => (
-          <span
-            key={link.name}
-            className="header__item"
-          >
-            <Link to={link.link}>
-              {link.name}
-            </Link>
-          </span>
-        ))}
-      </nav>
-  </header>
-)
+function Header({ menuLinks }) {
+  const [isActive, setIsActive] = useState("code");
+
+  const toggleActive = (name) => {
+    setIsActive(name);
+  }
+
+  return (
+    <header className="header">
+      <nav role="navigation">
+          {menuLinks.map(link => (
+            <span
+              key={link.name}
+              className="header__nav"
+            >
+              <button
+                className={`header__item ${isActive === link.name ? "header__item--active" : ''}`}
+                onClick={() =>toggleActive(`${link.name}`)}
+              >
+                {link.name}
+              </button>
+            </span>
+          ))}
+        </nav>
+    </header>
+  )
+} 
+
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-  menuLinks: PropTypes.array,
+  menuLinks: PropTypes.array
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  menuLinks: ["code", "design"],
 }
 
 export default Header
+
