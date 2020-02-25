@@ -1,14 +1,17 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 
 const IndexPage = (props) => {
   return (
-  <Layout>
+  <Layout location={props.location}>
     {props.data.allCode.edges.map(edge => (
       <div key={edge.node.id}>
         <h2>{edge.node.title}</h2>
+        <Link to={`/code/${edge.node.id}`}>
+          Link Test
+        </Link>
       </div>
     ))}
   </Layout>
