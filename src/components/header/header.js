@@ -12,11 +12,10 @@ function Header({ menuLinks }) {
 
   return (
     <header className="header">
+      <div className="header__intro" />
       <nav role="navigation" className="header__nav">
           {menuLinks.map(link => (
-            <span
-              key={link.name}
-            >
+            <span key={link.name}>
               <button
                 className={`header__toggle ${isActive === link.name ? "header__toggle--active" : ''}`}
                 onClick={() =>toggleActive(`${link.name}`)}
@@ -28,8 +27,7 @@ function Header({ menuLinks }) {
         </nav>
     </header>
   )
-} 
-
+}
 
 Header.propTypes = {
   menuLinks: PropTypes.array
@@ -40,4 +38,3 @@ Header.defaultProps = {
 }
 
 export default Header
-

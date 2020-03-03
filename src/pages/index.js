@@ -6,7 +6,7 @@ import Layout from "../components/layout/layout"
 const IndexPage = (props) => {
   return (
   <Layout>
-    {props.data.allCode.edges.map(edge => (
+    {props.data.code.edges.map(edge => (
       <div key={edge.node.id}>
         <h2>{edge.node.title}</h2>
         <Link to={`/code/${edge.node.id}`}>
@@ -20,12 +20,23 @@ const IndexPage = (props) => {
 
 export const query = graphql`
   {
-    allCode {
+    code: allCode {
       edges {
         node {
           id
           image
           link
+          summary
+          title
+        }
+      }
+    }
+    design: allDesign {
+      edges {
+        node {
+          date
+          id
+          image
           summary
           title
         }
