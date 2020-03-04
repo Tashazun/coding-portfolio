@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { graphql, Link } from "gatsby"
 
 import Header from "../components/header/header"
@@ -6,17 +6,31 @@ import Header from "../components/header/header"
 const IndexPage = props => {
   const [isActive, setIsActive] = useState("code");
 
+  const prevCountRef = useRef();
+  useEffect(() => {
+    prevCountRef.current = isActive;
+  });
+  const prevCount = prevCountRef.current;
+
   const toggleActive = event => {
     setIsActive(event.target.value);
+  }
+
+  const renderFrame = () => {
+    if(isActive === 'code') {
+      return props.data.code.edges
+    } else if(isActive === 'design') {
+      return props.data.design.edges
+    }
   }
 
   return (
     <div>
       <Header state={isActive} onClick={toggleActive}/>
-      {props.data.code.edges.map(edge => (
+      {renderFrame().map(edge => (
         <div key={edge.node.id}>
           <h2>{edge.node.title}</h2>
-          <Link to={`/code/${edge.node.id}`}>
+          <Link to={`/${isActive}/${edge.node.id}`}>
             Link Test
           </Link>
         </div>
