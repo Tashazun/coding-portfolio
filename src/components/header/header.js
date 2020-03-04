@@ -1,24 +1,34 @@
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import "./header.scss"
 
-function Header({ menuLinks }) {
-  const [isActive, setIsActive] = useState("code");
+function Header({ onClick, state }) {
 
-  const toggleActive = (name) => {
-    setIsActive(name);
-  }
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+          menuLinks {
+            name
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <header className="header">
       <div className="header__intro" />
       <nav role="navigation" className="header__nav">
-          {menuLinks.map(link => (
+          {data.site.siteMetadata.menuLinks.map(link => (
             <span key={link.name}>
               <button
-                className={`header__toggle ${isActive === link.name ? "header__toggle--active" : ''}`}
-                onClick={() =>toggleActive(`${link.name}`)}
+                value={link.name}
+                className={`header__toggle ${state === link.name ? "header__toggle--active" : ''}`}
+                onClick={onClick}
               >
                 {link.name}
               </button>
@@ -30,11 +40,8 @@ function Header({ menuLinks }) {
 }
 
 Header.propTypes = {
-  menuLinks: PropTypes.array
-}
-
-Header.defaultProps = {
-  menuLinks: ["code", "design"],
+  onClick: PropTypes.func,
+  state: PropTypes.string
 }
 
 export default Header

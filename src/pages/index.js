@@ -1,20 +1,27 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 
-import Layout from "../components/layout/layout"
+import Header from "../components/header/header"
 
-const IndexPage = (props) => {
+const IndexPage = props => {
+  const [isActive, setIsActive] = useState("code");
+
+  const toggleActive = event => {
+    setIsActive(event.target.value);
+  }
+
   return (
-  <Layout>
-    {props.data.code.edges.map(edge => (
-      <div key={edge.node.id}>
-        <h2>{edge.node.title}</h2>
-        <Link to={`/code/${edge.node.id}`}>
-          Link Test
-        </Link>
-      </div>
-    ))}
-  </Layout>
+    <div>
+      <Header state={isActive} onClick={toggleActive}/>
+      {props.data.code.edges.map(edge => (
+        <div key={edge.node.id}>
+          <h2>{edge.node.title}</h2>
+          <Link to={`/code/${edge.node.id}`}>
+            Link Test
+          </Link>
+        </div>
+      ))}
+    </div>
   )
 };
 

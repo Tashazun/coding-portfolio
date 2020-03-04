@@ -2,11 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 
-import Layout from "../components/layout/layout"
-
 const designTemplate = (props) => {
   return (
-    <Layout location={props.location}>
       <section>
         <h2>
           {props.data.design.title}
@@ -16,7 +13,6 @@ const designTemplate = (props) => {
           {props.data.design.summary}
         </p>
       </section>
-    </Layout>
   );
 }
 

@@ -1,11 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby'
 
-import Layout from "../components/layout/layout"
-
 const codeTemplate = (props) => {
   return (
-    <Layout location={props.location}>
       <section>
         <h2>
           {props.data.code.title}
@@ -14,7 +11,6 @@ const codeTemplate = (props) => {
           {props.data.code.summary}
         </p>
       </section>
-    </Layout>
   );
 }
 
