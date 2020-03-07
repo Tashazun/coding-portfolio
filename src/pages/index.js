@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Header from "../components/header/header"
+import Frame from "../components/frame/frame"
 
 const IndexPage = props => {
   const [isActive, setIsActive] = useState("code");
@@ -27,14 +28,15 @@ const IndexPage = props => {
   return (
     <div>
       <Header state={isActive} onClick={toggleActive}/>
-      {renderFrame().map(edge => (
+      {/* {renderFrame().map(edge => (
         <div key={edge.node.id}>
           <h2>{edge.node.title}</h2>
           <Link to={`/${isActive}/${edge.node.id}`}>
             Link Test
           </Link>
         </div>
-      ))}
+      ))} */}
+      <Frame thumbnails={renderFrame()} state={isActive}/>
     </div>
   )
 };
