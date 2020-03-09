@@ -6,8 +6,8 @@ import "./frame.scss"
 
 const Frame = ({ thumbnails, state }) => (
     <div className="frame">
-        {thumbnails.map((thumbnail) => (
-            <Fragment key={thumbnail.id}>
+        {thumbnails.map(thumbnail => (
+            <Fragment key={thumbnail.node.id}>
                 <div>
                     <span>{thumbnail.title}</span>
                     {thumbnail.image && 
