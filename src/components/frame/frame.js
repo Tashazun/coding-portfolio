@@ -8,14 +8,15 @@ const Frame = ({ thumbnails, state }) => (
     <div className="frame">
         {thumbnails.map(thumbnail => (
             <Fragment key={thumbnail.node.id}>
-                <div>
-                    <span>{thumbnail.title}</span>
-                    {thumbnail.image && 
-                        <img src={thumbnail.image}/>
+                <div className="frame__thumbnail">
+                    {thumbnail.node.image && 
+                        <img className="frame__image" src={thumbnail.node.image}/>
                     }
-                    <Link to={`/${state}/${thumbnail.node.id}`}>
-                        Link Test
-                    </Link>
+                    <span className="frame__link">
+                        <Link to={`/${state}/${thumbnail.node.id}`}>
+                            {thumbnail.node.title}
+                        </Link>
+                    </span>
                 </div>
             </Fragment>
         ))}

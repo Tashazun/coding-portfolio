@@ -1,4 +1,14 @@
 .frame {
+  display: flex;
   margin: 2rem;
   background-color: white;
+
+  &__thumbnail {
+    height: 18rem;
+    width: 18rem;
+  }
+
+  &__image {
+    height: 100%;
+  }
 }
