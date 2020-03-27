@@ -3,9 +3,20 @@
   margin: 2rem;
   background-color: white;
 
+  a {
+    transition: filter .4s ease;
+    &:hover {
+      filter: hue-rotate(90deg);
+    }
+  }
+
   &__thumbnail {
+    display: flex;
     height: 18rem;
     width: 18rem;
+    margin: .5rem;
+    align-items: center;
+    justify-content: center;
   }
 
   &__image {
