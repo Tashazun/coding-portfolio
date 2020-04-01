@@ -3,6 +3,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "./header.scss"
+import Image from "../image"
 
 function Header({ onClick, state }) {
 
@@ -21,7 +22,7 @@ function Header({ onClick, state }) {
 
   return (
     <header className="header">
-      <div className="header__intro" />
+      <Image />
       <nav role="navigation" className="header__nav">
           {data.site.siteMetadata.menuLinks.map(link => (
             <span key={link.name}>
