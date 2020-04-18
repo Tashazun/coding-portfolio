@@ -1,18 +1,23 @@
 .header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 1fr;
     &__intro {
         height: 50vh;
-        background-color: pink;
     }
     &__nav {
         display: flex;
         justify-content: center;
+        align-items: flex-end;
+        grid-area: 2/2/3/3;
     }
     &__toggle {
         background-color: transparent;
         border: none;
         cursor: pointer;
+        color: #FF3651;
         &--active {
-            color: pink;
+            color: #FFF;
         }
     }
 }
