@@ -1,0 +1,11 @@
+.design {
+  display: flex;
+  justify-content: center;
+  &__container {
+    width: 50%;
+  }
+  &__title {
+    color: #fff;
+    text-align: center;
+  }
+}

@@ -2,16 +2,20 @@ import React from 'react';
 import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 
+import "./design.scss"
+
 const designTemplate = (props) => {
   return (
-      <section>
-        <h2>
+      <section className="design">
+        <div className="design__container">
+        <h2 className="design__title">
           {props.data.design.title}
         </h2>
-        <Img fixed={props.data.design.localImage.childImageSharp.fixed} />
-        <p>
+        <Img className="design__image" fluid={props.data.design.localImage.childImageSharp.fluid} />
+        <p className="design__summary">
           {props.data.design.summary}
         </p>
+        </div>
       </section>
   );
 }
@@ -23,8 +27,8 @@ export const query = graphql`
       id
       localImage{
         childImageSharp{
-          fixed(width: 400){
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 700){
+            ...GatsbyImageSharpFluid
           }
         }
       }
