@@ -5,10 +5,19 @@ module.exports = {
     author: `Tasha Zuniga`,
     menuLinks: [
       {
-        name: 'code',
+        name: 'github',
+        link: 'https://github.com/Tashazun',
+        alt: 'github account'
       },
       {
-        name: 'design',
+        name: 'linkedin',
+        link: 'https://www.linkedin.com/in/tashazuniga/',
+        alt: 'linked in account'
+      },
+      {
+        name: 'instagram',
+        link: 'https://www.instagram.com/artofobscura/',
+        alt: 'instagram account'
       },
     ]
   },
@@ -68,6 +77,13 @@ module.exports = {
       resolve: `gatsby-plugin-remote-images`,
       options: {
         nodeType: 'Design',
+        imagePath: 'image',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'Code',
         imagePath: 'image',
       },
     },

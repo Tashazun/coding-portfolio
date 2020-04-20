@@ -2,35 +2,16 @@ import React, { useState, useRef, useEffect } from "react"
 import { graphql } from "gatsby"
 
 import '../components/layout.scss'
-import Header from "../components/header/header"
 import Frame from "../components/frame/frame"
+import Layout from "../components/layout/layout"
 
 const IndexPage = props => {
-  const [isActive, setIsActive] = useState("code");
-
-  const prevCountRef = useRef();
-  useEffect(() => {
-    prevCountRef.current = isActive;
-  });
-  const prevCount = prevCountRef.current;
-
-  const toggleActive = event => {
-    setIsActive(event.target.value);
-  }
-
-  const renderFrame = () => {
-    if(isActive === 'code') {
-      return props.data.code.edges
-    } else if(isActive === 'design') {
-      return props.data.design.edges
-    }
-  }
 
   return (
-    <main>
-      <Header state={isActive} onClick={toggleActive}/>
-      <Frame thumbnails={renderFrame()} state={isActive}/>
-    </main>
+    <Layout location={props.location}>
+      <Frame thumbnails={props.data.code.edges} state="code"/>
+      <Frame thumbnails={props.data.design.edges} state="design"/>
+    </Layout>
   )
 };
 

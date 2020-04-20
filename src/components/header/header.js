@@ -5,25 +5,12 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./header.scss"
 import Image from "../image"
 
-function Header({ onClick, state }) {
-
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          menuLinks {
-            name
-          }
-        }
-      }
-    }
-  `)
+function Header() {
 
   return (
     <header className="header">
       <Image />
-      <nav role="navigation" className="header__nav">
+      {/* <nav role="navigation" className="header__nav">
           {data.site.siteMetadata.menuLinks.map(link => (
             <span key={link.name}>
               <button
@@ -35,7 +22,7 @@ function Header({ onClick, state }) {
               </button>
             </span>
           ))}
-        </nav>
+        </nav> */}
     </header>
   )
 }
