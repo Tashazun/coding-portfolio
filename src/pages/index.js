@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
 import { graphql } from "gatsby"
 
-import '../components/layout.scss'
 import Frame from "../components/frame/frame"
 import Layout from "../components/layout/layout"
 
@@ -21,7 +20,13 @@ export const query = graphql`
       edges {
         node {
           id
-          image
+          localImage{
+            childImageSharp{
+              fluid(maxWidth: 400){
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           link
           summary
           title
@@ -33,7 +38,13 @@ export const query = graphql`
         node {
           date
           id
-          image
+          localImage{
+            childImageSharp{
+              fluid(maxWidth: 400){
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           summary
           title
         }
