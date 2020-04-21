@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 2fr 1fr;
+    &__image {
+        grid-area: 1/2/2/3;
+    }
     &__intro {
         height: 50vh;
     }

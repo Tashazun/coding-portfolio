@@ -11,29 +11,6 @@ body {
   background-color: black;
 }
 
-/* 
- * Purpose:
- * Assign height: "100%" to
- * html, body, #___gatsby &  
- * div with role="group"
-*/
-
-html, body, #___gatsby {
-  height: 100%;
-}
-
-div[role="group"][tabindex] {
-  height: 100%;
-}
-
-main {
-  height: 100%
-}
-
-.gatsby-image-wrapper {
-  grid-area: 1/2/2/3;
-}
-
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

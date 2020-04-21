@@ -1,8 +1,23 @@
 .frame {
+  position: relative;
   display: flex;
-  margin: 5rem;
   background-color: white;
-  justify-content: center;
+
+  &__title {
+    position: sticky;
+    top: 0;
+    width: 30%;
+    height: 100vh;
+    background-color: #FF3651;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 25vw);
+    width: 70%;
+
+  }
 
   &__filter {
     z-index: 1;
@@ -17,17 +32,14 @@
 
   &__thumbnail {
     position: relative;
-    width: 300px;
-    height: 300px;
     overflow: hidden;
+    height: 100%;
+    width: 100%;
   }
 
   &__image {
-    position: absolute;
-    left: 50%;
-    top: 50%;
     height: 100%;
-    width: auto;
-    transform: translate(-50%,-50%);
+    width: 100%;
+    object-fit: cover;
   }
 }
