@@ -5,15 +5,17 @@ import Img from "gatsby-image"
 
 import "./frame.scss"
 
-const Frame = ({ thumbnails, state }) => (
-    <div className="frame">
+const Frame = ({ thumbnails, state, location }) => (
+    <div className={`frame ${state === 'design' ? 'frame__right' : ''}`}>
         <div className="frame__title">
             <p>{state}</p>
         </div>
         <div className="frame__content">
             {thumbnails.map(thumbnail => (
                 <Fragment key={thumbnail.node.id}>
-                    <Link to={`/${state}/${thumbnail.node.id}`}>
+                    <Link 
+                        to={`/${state}/${thumbnail.node.id}`}
+                    >
                             <div className="frame__thumbnail">
                                 <span className="frame__filter" />
                                 {thumbnail.node.localImage && 

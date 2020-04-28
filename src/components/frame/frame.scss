@@ -2,21 +2,24 @@
   position: relative;
   display: flex;
   background-color: white;
+  &__right {
+    flex-direction: row-reverse;
+  }
 
   &__title {
     position: sticky;
     top: 0;
-    width: 30%;
+    width: 50%;
     height: 100vh;
     background-color: #FF3651;
   }
+
 
   &__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 25vw);
-    width: 70%;
-
+    width: 50%;
   }
 
   &__filter {
