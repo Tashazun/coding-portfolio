@@ -1,25 +1,47 @@
+// media-queries
+
+$tablet-width: 515px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
 .frame {
   position: relative;
   display: flex;
+  flex-direction: column;
   background-color: white;
-  &__right {
-    flex-direction: row-reverse;
+  @include tablet {
+    flex-direction: row;
   }
+  &__right {
+    @include tablet {
+      flex-direction: row-reverse;
+    }
+  }
+
 
   &__title {
     position: sticky;
     top: 0;
-    width: 50%;
-    height: 100vh;
+    height: 25vh;
     background-color: #FF3651;
+    @include tablet {
+      height: 100vh;
+      width: 50%;
+    }
   }
 
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 25vw);
-    width: 50%;
+    grid-template-rows: repeat(3, 40vw);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    @include tablet {
+      width: 50%;
+    }
   }
 
   &__filter {

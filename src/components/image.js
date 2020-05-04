@@ -29,7 +29,7 @@ const Image = () => {
   return <Img
           className="header__image"
           fluid={data.placeholderImage.childImageSharp.fluid} 
-          alt="Candy Coded"
+          alt="Candy Coded Logo"
           />
 }
 

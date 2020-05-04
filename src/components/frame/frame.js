@@ -19,7 +19,11 @@ const Frame = ({ thumbnails, state, location }) => (
                             <div className="frame__thumbnail">
                                 <span className="frame__filter" />
                                 {thumbnail.node.localImage && 
-                                    <Img className="frame__image" fluid={thumbnail.node.localImage.childImageSharp.fluid}/>
+                                    <Img
+                                        className="frame__image"
+                                        fluid={thumbnail.node.localImage.childImageSharp.fluid}
+                                        alt={thumbnail.node.title}
+                                    />
                                 }
                             </div>
                         </Link>
