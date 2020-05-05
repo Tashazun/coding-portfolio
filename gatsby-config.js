@@ -7,17 +7,17 @@ module.exports = {
       {
         name: 'github',
         link: 'https://github.com/Tashazun',
-        alt: 'github account'
+        alt: 'external github account'
       },
       {
         name: 'linkedin',
         link: 'https://www.linkedin.com/in/tashazuniga/',
-        alt: 'linked in account'
+        alt: 'external linked in account'
       },
       {
         name: 'instagram',
         link: 'https://www.instagram.com/artofobscura/',
-        alt: 'instagram account'
+        alt: 'external instagram account'
       },
     ]
   },

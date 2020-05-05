@@ -23,7 +23,7 @@ const Layout = ({ children, location }) => {
 
   return (
     <div className="site-wrapper">
-      <Header />
+      <Header menuLinks={data.site.siteMetadata.menuLinks}/>
       <main className="site-wrapper__content">
         {children}
       </main>
