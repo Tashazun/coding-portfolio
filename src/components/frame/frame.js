@@ -8,7 +8,7 @@ import "./frame.scss"
 const Frame = ({ thumbnails, state, location }) => (
     <div className={`frame ${state === 'design' ? 'frame__right' : ''}`}>
         <div className="frame__title">
-            <p>{state}</p>
+            <h2 className="frame__heading">{state}</h2>
         </div>
         <div className="frame__content">
             {thumbnails.map(thumbnail => (

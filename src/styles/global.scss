@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+
+// media-queries
+
+$tablet-width: 515px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}

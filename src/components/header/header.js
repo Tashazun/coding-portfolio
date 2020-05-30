@@ -7,19 +7,20 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Header = ({ menuLinks }) => (
     <header className="header">
+      <h1>Test</h1>
       <Image />
       <nav role="navigation" className="header__nav">
           {menuLinks.map(link => {
             let linkImage;
             switch(link.name) {
               case 'github':
-                linkImage = <FaGithub title={link.name}/>;
+                linkImage = <FaGithub role ="img" title={link.alt}/>;
                 break;
               case 'instagram':
-                linkImage = <FaInstagram title={link.name}/>;
+                linkImage = <FaInstagram role ="img" title={link.alt}/>;
                 break;
               case 'linkedin':
-                linkImage = <FaLinkedin title={link.name}/>;
+                linkImage = <FaLinkedin role ="img" title={link.alt}/>;
                 break;
             }
              return (

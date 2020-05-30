@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
 
 import "./design.scss"
@@ -16,6 +16,7 @@ const designTemplate = (props) => {
           {props.data.design.summary}
         </p>
         </div>
+        <Link to="/">Go Back</Link>
       </section>
   );
 }

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Frame from "../components/frame/frame"
-import Layout from "../components/layout/layout"
+import Layout from "../components/layout"
 
 const IndexPage = props => {
 
