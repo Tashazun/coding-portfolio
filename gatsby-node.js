@@ -2,12 +2,12 @@ const path = require('path');
 
 exports.createPages = ({graphql, actions}) => {
   const {createPage} = actions;
-  const codeTemplate = path.resolve('src/templates/codeTemplate.js');
-  const designTemplate = path.resolve('src/templates/designTemplate.js');
+  const digitalTemplate = path.resolve('src/templates/digitalTemplate.js');
+  const traditionalTemplate = path.resolve('src/templates/traditionalTemplate.js');
 
-  const codes = graphql(`
+  const digitals = graphql(`
   {
-    allCode {
+    allDigital {
       edges {
         node {
           id
@@ -20,18 +20,18 @@ exports.createPages = ({graphql, actions}) => {
       throw result.errors;
     }
 
-    result.data.allCode.edges.forEach(code => {
+    result.data.allDigital.edges.forEach(digital => {
       createPage({
-        path: `/code/${code.node.id}`,
-        component: codeTemplate,
-        context: {codeId: code.node.id}
+        path: `/digital/${digital.node.id}`,
+        component: digitalTemplate,
+        context: {digitalId: digital.node.id}
       })
     });
   });
 
-  const designs = graphql(`
+  const traditionals = graphql(`
   {
-    allDesign {
+    allTraditional {
       edges {
         node {
           id
@@ -44,14 +44,14 @@ exports.createPages = ({graphql, actions}) => {
       throw result.errors;
     }
 
-    result.data.allDesign.edges.forEach(design=> {
+    result.data.allTraditional.edges.forEach(traditional => {
       createPage({
-        path: `/design/${design.node.id}`,
-        component: designTemplate,
-        context: {designId: design.node.id}
+        path: `/traditional/${traditional.node.id}`,
+        component: traditionalTemplate,
+        context: {traditionalId: traditional.node.id}
       })
     });
   });
 
-  return Promise.all([codes, designs]);
+  return Promise.all([digitals, traditionals]);
 }

@@ -43,8 +43,8 @@ module.exports = {
         credential: require("./firebase.json"),
         types: [
           {
-            type: 'Design',
-            collection: 'design',
+            type: 'Digital',
+            collection: 'digital',
             map: doc => ({
               date: doc.date,
               image: doc.image,
@@ -53,9 +53,10 @@ module.exports = {
             }),
           },
           {
-            type: 'Code',
-            collection: 'code',
+            type: 'Traditional',
+            collection: 'traditional',
             map: doc => ({
+              date: doc.date,
               image: doc.image,
               link: doc.link,
               summary: doc.summary,
@@ -70,14 +71,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {
-        nodeType: 'Design',
+        nodeType: 'Digital',
         imagePath: 'image',
       },
     },
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {
-        nodeType: 'Code',
+        nodeType: 'Traditional',
         imagePath: 'image',
       },
     },

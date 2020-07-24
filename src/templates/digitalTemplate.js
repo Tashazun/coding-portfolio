@@ -1,24 +1,23 @@
 import React from 'react';
 import { graphql } from 'gatsby'
 
-const codeTemplate = (props) => {
+const digitalTemplate = (props) => {
   return (
       <section>
         <h2>
-          {props.data.code.title}
+          {props.data.digital.title}
         </h2>
         <p>
-          {props.data.code.summary}
+          {props.data.digital.summary}
         </p>
       </section>
   );
 }
 
 export const query = graphql`
-  query CodeQuery($codeId: String!) {
-    code(id: {eq: $codeId}){
+  query DigitalQuery($digitalId: String!) {
+    digital(id: {eq: $digitalId}){
       image
-      link
       id
       summary
       title
@@ -26,4 +25,4 @@ export const query = graphql`
   }
 `;
 
-export default codeTemplate;
+export default digitalTemplate;

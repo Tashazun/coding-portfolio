@@ -8,17 +8,18 @@ const IndexPage = props => {
 
   return (
     <Layout location={props.location}>
-      <Frame thumbnails={props.data.code.edges} state="code"/>
-      <Frame thumbnails={props.data.design.edges} state="design"/>
+      <Frame thumbnails={props.data.digital.edges} state="digital"/>
+      <Frame thumbnails={props.data.traditional.edges} state="traditional"/>
     </Layout>
   )
 };
 
 export const query = graphql`
   {
-    code: allCode {
+    digital: allDigital {
       edges {
         node {
+          date
           id
           localImage{
             childImageSharp{
@@ -27,13 +28,12 @@ export const query = graphql`
               }
             }
           }
-          link
           summary
           title
         }
       }
     }
-    design: allDesign {
+    traditional: allTraditional {
       edges {
         node {
           date
