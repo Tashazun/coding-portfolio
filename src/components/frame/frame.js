@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 import "./frame.scss"
 
 const Frame = ({ thumbnails, state, location }) => (
-    <div className={`frame ${state === 'design' ? 'frame__right' : ''}`}>
+    <div className={`frame ${state === 'traditional' ? 'frame__right' : ''}`}>
         <div className="frame__title">
             <h2 className="frame__heading">{state}</h2>
         </div>
