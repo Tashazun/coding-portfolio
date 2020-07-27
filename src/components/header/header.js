@@ -10,7 +10,7 @@ const Header = ({ menuLinks }) => (
       <h1>Test</h1>
       <Image />
       <nav role="navigation" className="header__nav">
-          {menuLinks.map(link => {
+          {/* {menuLinks.map(link => {
             let linkImage;
             switch(link.name) {
               case 'github':
@@ -28,7 +28,10 @@ const Header = ({ menuLinks }) => (
               {linkImage}
              </a>
             )
-          })}
+          })} */}
+          <div>Work</div>
+          <div>About</div>
+          <div>Shop</div>
         </nav>
     </header>
   )

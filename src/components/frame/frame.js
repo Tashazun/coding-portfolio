@@ -35,6 +35,7 @@ const Frame = ({ thumbnails, state, location }) => (
 
 Frame.propTypes = {
   thumbnails: PropTypes.array,
+  state: PropTypes.string,
 }
 
 export default Frame
