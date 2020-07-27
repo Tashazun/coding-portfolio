@@ -3,11 +3,11 @@ import React from "react"
 
 import "./header.scss"
 import Image from "../image"
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+// import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Header = ({ menuLinks }) => (
     <header className="header">
-      <h1>Test</h1>
+      <div className="header__skip" tabIndex="0" >Skip to Main</div>
       <Image />
       <nav role="navigation" className="header__nav">
           {/* {menuLinks.map(link => {
@@ -29,9 +29,15 @@ const Header = ({ menuLinks }) => (
              </a>
             )
           })} */}
-          <div>Work</div>
-          <div>About</div>
-          <div>Shop</div>
+          <div className="header__link">
+            <a href="/">Work</a>
+          </div>
+          <div className="header__link">
+            <a href="/about">About</a>
+          </div>
+          <div className="header__link">
+            <a href="etsy.com">Shop</a>
+          </div>
         </nav>
     </header>
   )
