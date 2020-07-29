@@ -29,15 +29,9 @@ const Header = ({ menuLinks }) => (
              </a>
             )
           })} */}
-          <div className="header__link">
-            <a href="/">Work</a>
-          </div>
-          <div className="header__link">
-            <a href="/about">About</a>
-          </div>
-          <div className="header__link">
-            <a href="etsy.com">Shop</a>
-          </div>
+            <a href="/" className="header__link">Work</a>
+            <a href="/about" className="header__link">About</a>
+            <a href="etsy.com" className="header__link">Shop</a>
         </nav>
     </header>
   )

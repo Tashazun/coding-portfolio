@@ -1,4 +1,5 @@
 import React from "react"
+import Helmet from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -22,6 +23,9 @@ const Layout = ({ children, location }) => {
 
   return (
     <div className="site-wrapper">
+      <Helmet>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Righteous&display=swap" rel="stylesheet"/>
+      </Helmet>
       <Header menuLinks={data.site.siteMetadata.menuLinks}/>
       <main id="maincontent" className="site-wrapper__content">
         {children}
