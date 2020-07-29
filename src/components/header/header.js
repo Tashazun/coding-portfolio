@@ -7,7 +7,7 @@ import Image from "../image"
 
 const Header = ({ menuLinks }) => (
     <header className="header">
-      <div className="header__skip" tabIndex="0" >Skip to Main</div>
+      <a href="#maincontent" className="header__skip" >Skip Navigation</a>
       <Image />
       <nav role="navigation" className="header__nav">
           {/* {menuLinks.map(link => {
