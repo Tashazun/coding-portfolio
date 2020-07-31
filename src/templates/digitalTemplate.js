@@ -1,8 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby'
 
+import Layout from "../components/layout"
+
 const digitalTemplate = (props) => {
   return (
+    <Layout>
       <section>
         <h2>
           {props.data.digital.title}
@@ -11,6 +14,7 @@ const digitalTemplate = (props) => {
           {props.data.digital.summary}
         </p>
       </section>
+    </Layout>
   );
 }
 

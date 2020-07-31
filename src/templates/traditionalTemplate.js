@@ -2,10 +2,13 @@ import React from 'react';
 import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
 
+import Layout from "../components/layout"
+
 import "./design.scss"
 
 const traditionalTemplate = (props) => {
   return (
+    <Layout>
       <section className="traditional">
         <div className="traditional__container">
         <h2 className="traditional__title">
@@ -18,6 +21,7 @@ const traditionalTemplate = (props) => {
         </div>
         <Link to="/">Go Back</Link>
       </section>
+    </Layout>
   );
 }
 
