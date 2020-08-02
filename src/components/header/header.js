@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 
 import "./header.scss"
 import Image from "../image"
@@ -30,7 +31,7 @@ const Header = ({ menuLinks }) => (
             )
           })} */}
             <a href="/" className="header__link">Work</a>
-            <a href="/about" className="header__link">About</a>
+            <Link to="/about" className="header__link">About</Link>
             <a href="etsy.com" className="header__link">Shop</a>
         </nav>
     </header>
